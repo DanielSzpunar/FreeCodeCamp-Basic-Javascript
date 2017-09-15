@@ -1,0 +1,37 @@
+<Html>
+    <head>
+        <title>
+            Converting Celsius To Fahrenheit:
+        </title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            h1 span {
+                border-bottom: 0.25px solid black;
+            }
+            #style {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="style">
+        <h1><span>Celsius To Fahrenheit</span></h1>
+        <p>Enter a temperature in celsius, then click convert</p>
+        <input id="input1" type="text">
+        <button onclick="calculateTemp()">Convert</button>
+        <p id="solution"></p>
+        </div>
+    </body>
+<script>
+    function calculateTemp() {
+        var input = document.getElementById("input1").value;
+        var fahrenheit = input * 9/5 + 32;
+        var solution = document.getElementById("solution");
+        solution.innerHTML = "The temperature of " + input + " celsius, is " + fahrenheit + " fahrenheit.";
+
+        console.log(input)
+    }
+</script>
+</Html>
