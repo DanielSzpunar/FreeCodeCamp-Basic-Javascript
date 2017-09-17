@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Golf Code:</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Golf Code:</h1>
+        <h2 id="output"></h2>
+        <p>Determine what you shot on each hole.</p>
+        <p>Enter Par: </p><input id="par" type="number">
+        <p>Enter Stroke: </p> <input id="stroke" type="number">
+        <p></p><button onclick="determineShot()">Submit</button>
+        <p></p><button onclick="reset()">Reset</button>
+        <script>
+            function determineShot() {
+                var par = document.getElementById("par").value;
+                par = parseInt(par);
+                
+                var stroke = document.getElementById("stroke").value;
+                stroke = parseInt(stroke);
+                var result = "";
+                if(stroke === 1)
+                    result = "Congrats, You've done the impossible and shot a hole in one!";
+                    else if (stroke - par  <= -2) 
+                        result = "Pretty good, shooting an Eagle is not easy!";
+                    else if (stroke - par == -1)
+                        result = "A Birdie! Keep it up!";
+                    else if (stroke == par)
+                        result = "Par.";
+                    else if (stroke - par == 1)
+                        result = "Bogie...";
+                    else if(stroke - par == 2) 
+                        result = "Double bogie...";
+                    else if (stroke - par >= 3) {
+                        result = "You're shit bro go the fuck home!";
+                    }
+                var output = document.getElementById("output");
+                output.innerHTML = (result);
+            }
+            function reset() {
+                location.reload();
+            }
+        </script>
+    </body>
+</html>
